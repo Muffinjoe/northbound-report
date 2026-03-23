@@ -5,4 +5,8 @@
   <url><loc>https://northboundreport.com/contact.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://northboundreport.com/privacy.html</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
   <url><loc>https://northboundreport.com/terms.html</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://northboundreport.com/reviews.html</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://northboundreport.com/health.html</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://northboundreport.com/tech.html</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://northboundreport.com/trending.html</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
 </urlset>
