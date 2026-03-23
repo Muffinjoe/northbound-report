@@ -68,10 +68,11 @@ a:hover { color: var(--color-accent-hover); }
 }
 
 /* BRANDED LOGO */
-.site-logo .logo-n { color: #1e3a8a; }
-.site-logo .logo-b { color: #2563eb; }
+.site-logo .logo-box { display: inline-flex; align-items: center; gap: 1px; background: #1e3a8a; border-radius: 4px; padding: 2px 6px; margin-right: 8px; font-size: 0.85em; letter-spacing: 1px; }
+.site-logo .logo-n, .site-logo .logo-b, .site-logo .logo-r { color: #ffffff; font-weight: 800; }
+.site-logo .logo-b { color: #93c5fd; }
 .site-logo .logo-r { color: #60a5fa; }
-.site-logo .logo-divider { color: #cbd5e1; font-weight: 300; margin: 0 2px; }
+.site-logo .logo-divider { display: none; }
 </style>
 </head>
 <body>
@@ -80,7 +81,7 @@ a:hover { color: var(--color-accent-hover); }
 
 <header class="site-header">
   <div class="header-inner">
-    <a href="index.html" class="site-logo"><span class="logo-n">N</span><span class="logo-b">B</span><span class="logo-r">R</span> <span class="logo-divider">|</span> Northbound Report</a>
+    <a href="index.html" class="site-logo"><span class="logo-box"><span class="logo-n">N</span><span class="logo-b">B</span><span class="logo-r">R</span></span><span class="logo-divider">|</span>Northbound Report</a>
     <nav class="site-nav" id="mainNav">
       <a href="index.html">Home</a><a href="#">Reviews</a><a href="#">Health</a><a href="#">Trending</a>
     </nav>
