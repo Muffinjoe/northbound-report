@@ -371,5 +371,30 @@ a.cta-button, a.cta-button:visited, a.cta-button:hover { color: #ffffff !importa
 <script>
 document.addEventListener('click',function(e){ var l=e.target.closest('a[href*="hop.clickbank.net"]'); if(l){ fbq('track','Purchase',{value:1.00,currency:'GBP'}); } });
 </script>
+<script>
+(function(){
+  var slug = location.pathname.replace(/\/$/, '').split('/').pop() || 'home';
+  if (slug === 'admin.html' || slug === 'admin') return;
+
+  // Track page view
+  fetch('/.netlify/functions/track', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ type: 'view', page: slug })
+  }).catch(function(){});
+
+  // Track ClickBank clicks
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest('a[href*="hop.clickbank.net"]');
+    if (link) {
+      fetch('/.netlify/functions/track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'click', page: slug })
+      }).catch(function(){});
+    }
+  });
+})();
+</script>
 </body>
 </html>

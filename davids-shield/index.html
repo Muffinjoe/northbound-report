@@ -1191,5 +1191,30 @@ document.addEventListener('click', function(e) {
 });
 </script>
 
+<script>
+(function(){
+  var slug = location.pathname.replace(/\/$/, '').split('/').pop() || 'home';
+  if (slug === 'admin.html' || slug === 'admin') return;
+
+  // Track page view
+  fetch('/.netlify/functions/track', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ type: 'view', page: slug })
+  }).catch(function(){});
+
+  // Track ClickBank clicks
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest('a[href*="hop.clickbank.net"]');
+    if (link) {
+      fetch('/.netlify/functions/track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'click', page: slug })
+      }).catch(function(){});
+    }
+  });
+})();
+</script>
 </body>
 </html>

@@ -350,7 +350,7 @@ a:hover { color: var(--color-accent-hover); }
       </div>
     </div>
     <div class="featured-card">
-      <a href="memory-wave-v2-aging-parents/index.html"><img src="https://images.unsplash.com/photo-1581579438747-104c8d46ba35?w=600&h=340&fit=crop&crop=center" alt="Adult child holding elderly parent's hand"></a>
+      <a href="memory-wave-v2-aging-parents/index.html"><img src="https://images.unsplash.com/photo-1454875392665-2ac2c85e8d3e?w=600&h=340&fit=crop&crop=center" alt="Adult child holding elderly parent's hand"></a>
       <div class="featured-card-body">
         <div class="card-category">Caregiving</div>
         <h2><a href="memory-wave-v2-aging-parents/index.html">Watching the Pieces Fall: Navigating a Parent's Mental Decline</a></h2>
@@ -486,5 +486,30 @@ a:hover { color: var(--color-accent-hover); }
   </div>
 </footer>
 
+<script>
+(function(){
+  var slug = location.pathname.replace(/\/$/, '').split('/').pop() || 'home';
+  if (slug === 'admin.html' || slug === 'admin') return;
+
+  // Track page view
+  fetch('/.netlify/functions/track', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ type: 'view', page: slug })
+  }).catch(function(){});
+
+  // Track ClickBank clicks
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest('a[href*="hop.clickbank.net"]');
+    if (link) {
+      fetch('/.netlify/functions/track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'click', page: slug })
+      }).catch(function(){});
+    }
+  });
+})();
+</script>
 </body>
 </html>

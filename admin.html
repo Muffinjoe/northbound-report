@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Northbound Report</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; }
+
+/* PASSWORD GATE */
+.pw-gate { display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
+.pw-box { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 40px; max-width: 380px; width: 100%; text-align: center; }
+.pw-box h1 { font-size: 1.3rem; margin-bottom: 8px; color: #f1f5f9; }
+.pw-box p { font-size: 0.85rem; color: #94a3b8; margin-bottom: 24px; }
+.pw-box input { width: 100%; padding: 12px 16px; border: 1px solid #475569; border-radius: 6px; background: #0f172a; color: #e2e8f0; font-size: 0.95rem; margin-bottom: 12px; outline: none; }
+.pw-box input:focus { border-color: #3b82f6; }
+.pw-box button { width: 100%; padding: 12px; background: #3b82f6; color: #fff; border: none; border-radius: 6px; font-size: 0.95rem; font-weight: 600; cursor: pointer; }
+.pw-box button:hover { background: #2563eb; }
+.pw-error { color: #ef4444; font-size: 0.82rem; margin-top: 8px; display: none; }
+
+/* DASHBOARD */
+.dashboard { display: none; }
+.dash-header { background: #1e293b; border-bottom: 1px solid #334155; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+.dash-logo { font-size: 1.2rem; font-weight: 700; }
+.dash-logo span { color: #3b82f6; }
+.dash-nav { display: flex; gap: 16px; align-items: center; }
+.dash-nav a { color: #94a3b8; font-size: 0.82rem; text-decoration: none; }
+.dash-nav a:hover { color: #e2e8f0; }
+
+.dash-content { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
+.dash-content h2 { font-size: 1.4rem; margin-bottom: 8px; }
+.dash-subtitle { color: #94a3b8; font-size: 0.88rem; margin-bottom: 28px; }
+
+/* STATS GRID */
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 32px; }
+.stat-card { background: #1e293b; border: 1px solid #334155; border-radius: 10px; padding: 20px; }
+.stat-label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+.stat-value { font-size: 2rem; font-weight: 700; color: #f1f5f9; }
+.stat-value.green { color: #22c55e; }
+.stat-value.blue { color: #3b82f6; }
+.stat-value.amber { color: #f59e0b; }
+.stat-sub { font-size: 0.78rem; color: #64748b; margin-top: 4px; }
+
+/* TABLE */
+.table-card { background: #1e293b; border: 1px solid #334155; border-radius: 10px; overflow: hidden; margin-bottom: 24px; }
+.table-header { padding: 16px 20px; border-bottom: 1px solid #334155; display: flex; justify-content: space-between; align-items: center; }
+.table-header h3 { font-size: 1rem; }
+.table-header .reset-btn { background: #334155; color: #94a3b8; border: none; padding: 6px 14px; border-radius: 5px; font-size: 0.78rem; cursor: pointer; }
+.table-header .reset-btn:hover { background: #475569; color: #e2e8f0; }
+table { width: 100%; border-collapse: collapse; }
+th { text-align: left; padding: 10px 20px; font-size: 0.72rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid #334155; }
+td { padding: 12px 20px; font-size: 0.88rem; border-bottom: 1px solid #1e293b; }
+tr:hover td { background: #162032; }
+.page-name { color: #e2e8f0; font-weight: 500; }
+.click-count { color: #3b82f6; font-weight: 700; }
+.view-count { color: #94a3b8; }
+.ctr { color: #22c55e; font-weight: 600; }
+
+/* LIVE DOT */
+.live-dot { display: inline-block; width: 8px; height: 8px; background: #22c55e; border-radius: 50%; margin-right: 6px; animation: pulse 2s infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+@media (max-width: 768px) {
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  table { font-size: 0.82rem; }
+  th, td { padding: 10px 12px; }
+}
+@media (max-width: 480px) {
+  .stats-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- PASSWORD GATE -->
+<div class="pw-gate" id="pwGate">
+  <div class="pw-box">
+    <h1>NBR Admin</h1>
+    <p>Enter password to access the dashboard</p>
+    <input type="password" id="pwInput" placeholder="Password" onkeydown="if(event.key==='Enter')checkPw()">
+    <button onclick="checkPw()">Access Dashboard</button>
+    <div class="pw-error" id="pwError">Incorrect password</div>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div class="dashboard" id="dashboard">
+  <div class="dash-header">
+    <div class="dash-logo">NBR <span>Admin</span></div>
+    <div class="dash-nav">
+      <span><span class="live-dot"></span>Live Tracking</span>
+      <a href="index.html">View Site</a>
+      <a href="#" onclick="localStorage.removeItem('nbr_admin');location.reload()">Logout</a>
+    </div>
+  </div>
+
+  <div class="dash-content">
+    <h2>Dashboard</h2>
+    <p class="dash-subtitle">Real-time traffic and click tracking across all pages</p>
+
+    <!-- Top Stats -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Total Page Views</div>
+        <div class="stat-value" id="totalViews">0</div>
+        <div class="stat-sub">All pages combined</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Total Clicks</div>
+        <div class="stat-value blue" id="totalClicks">0</div>
+        <div class="stat-sub">ClickBank link clicks</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Overall CTR</div>
+        <div class="stat-value green" id="overallCtr">0%</div>
+        <div class="stat-sub">Clicks / Views</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Active Pages</div>
+        <div class="stat-value amber" id="activePages">0</div>
+        <div class="stat-sub">Pages with traffic</div>
+      </div>
+    </div>
+
+    <!-- Per-Page Table -->
+    <div class="table-card">
+      <div class="table-header">
+        <h3>Page Performance</h3>
+        <button class="reset-btn" onclick="if(confirm('Reset all tracking data?')){localStorage.removeItem('nbr_views');localStorage.removeItem('nbr_clicks');location.reload();}">Reset Data</button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Page</th>
+            <th>Views</th>
+            <th>Clicks</th>
+            <th>CTR</th>
+          </tr>
+        </thead>
+        <tbody id="pageTable"></tbody>
+      </table>
+    </div>
+
+    <!-- Product Summary -->
+    <div class="table-card">
+      <div class="table-header">
+        <h3>Product Summary</h3>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Total Views</th>
+            <th>Total Clicks</th>
+            <th>CTR</th>
+          </tr>
+        </thead>
+        <tbody id="productTable"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+// Password
+function checkPw() {
+  var pw = document.getElementById('pwInput').value;
+  if (pw === 'JoeMurfin') {
+    localStorage.setItem('nbr_admin', '1');
+    showDashboard();
+  } else {
+    document.getElementById('pwError').style.display = 'block';
+  }
+}
+
+if (localStorage.getItem('nbr_admin') === '1') {
+  showDashboard();
+}
+
+function showDashboard() {
+  document.getElementById('pwGate').style.display = 'none';
+  document.getElementById('dashboard').style.display = 'block';
+  loadData();
+}
+
+// All tracked pages
+var PAGES = [
+  { slug: 'davids-shield', name: "David's Shield", product: "David's Shield" },
+  { slug: 'davids-shield-v2-family-protection', name: "David's Shield — Family Protection", product: "David's Shield" },
+  { slug: 'davids-shield-v3-grid-failure', name: "David's Shield — Grid Failure", product: "David's Shield" },
+  { slug: 'davids-shield-v4-self-reliance', name: "David's Shield — Self Reliance", product: "David's Shield" },
+  { slug: 'genius-wave', name: "Genius Wave", product: "Genius Wave" },
+  { slug: 'genius-wave-v2-productivity', name: "Genius Wave — Productivity", product: "Genius Wave" },
+  { slug: 'genius-wave-v3-creativity', name: "Genius Wave — Creativity", product: "Genius Wave" },
+  { slug: 'genius-wave-v4-stress-relief', name: "Genius Wave — Stress Relief", product: "Genius Wave" },
+  { slug: 'memory-wave', name: "Memory Wave", product: "Memory Wave" },
+  { slug: 'memory-wave-v2-aging-parents', name: "Memory Wave — Aging Parents", product: "Memory Wave" },
+  { slug: 'memory-wave-v3-brain-science', name: "Memory Wave — Brain Science", product: "Memory Wave" },
+  { slug: 'memory-wave-v4-retirement', name: "Memory Wave — Retirement", product: "Memory Wave" },
+  { slug: 'derila', name: "Derila Ergo", product: "Derila Ergo" },
+  { slug: 'derila-v2-chronic-pain', name: "Derila — Chronic Pain", product: "Derila Ergo" },
+  { slug: 'derila-v3-sleep-science', name: "Derila — Sleep Science", product: "Derila Ergo" },
+  { slug: 'derila-v4-snoring', name: "Derila — Snoring", product: "Derila Ergo" },
+  { slug: 'smart-water-box', name: "Smart Water Box", product: "Smart Water Box" },
+  { slug: 'smart-water-box-v2-drought', name: "Smart Water Box — Drought", product: "Smart Water Box" },
+  { slug: 'smart-water-box-v3-water-bills', name: "Smart Water Box — Water Bills", product: "Smart Water Box" },
+  { slug: 'smart-water-box-v4-contamination', name: "Smart Water Box — Contamination", product: "Smart Water Box" },
+  { slug: 'sleep-quality-guide', name: "Sleep Quality Guide", product: "Supporting" },
+  { slug: 'emergency-preparedness-checklist', name: "Emergency Prep Checklist", product: "Supporting" },
+  { slug: 'brain-health-over-40', name: "Brain Health Over 40", product: "Supporting" },
+  { slug: 'water-quality-report', name: "Water Quality Report", product: "Supporting" },
+  { slug: 'off-grid-living-beginners', name: "Off-Grid Living Guide", product: "Supporting" },
+];
+
+function loadData() {
+  fetch('/.netlify/functions/track')
+    .then(function(r) { return r.json(); })
+    .then(function(stats) { renderData(stats.views || {}, stats.clicks || {}); })
+    .catch(function() { renderData({}, {}); });
+}
+
+function renderData(views, clicks) {
+
+  var totalViews = 0, totalClicks = 0, activeCount = 0;
+  var productData = {};
+
+  // Page table
+  var tableHtml = '';
+  PAGES.forEach(function(p) {
+    var v = views[p.slug] || 0;
+    var c = clicks[p.slug] || 0;
+    var ctr = v > 0 ? ((c / v) * 100).toFixed(1) + '%' : '—';
+    totalViews += v;
+    totalClicks += c;
+    if (v > 0) activeCount++;
+
+    // Product aggregation
+    if (!productData[p.product]) productData[p.product] = { views: 0, clicks: 0 };
+    productData[p.product].views += v;
+    productData[p.product].clicks += c;
+
+    tableHtml += '<tr><td class="page-name">' + p.name + '</td><td class="view-count">' + v.toLocaleString() + '</td><td class="click-count">' + c.toLocaleString() + '</td><td class="ctr">' + ctr + '</td></tr>';
+  });
+
+  document.getElementById('pageTable').innerHTML = tableHtml;
+  document.getElementById('totalViews').textContent = totalViews.toLocaleString();
+  document.getElementById('totalClicks').textContent = totalClicks.toLocaleString();
+  document.getElementById('overallCtr').textContent = totalViews > 0 ? ((totalClicks / totalViews) * 100).toFixed(1) + '%' : '0%';
+  document.getElementById('activePages').textContent = activeCount;
+
+  // Product summary table
+  var prodHtml = '';
+  var products = ["David's Shield", "Genius Wave", "Memory Wave", "Derila Ergo", "Smart Water Box", "Supporting"];
+  products.forEach(function(name) {
+    var d = productData[name] || { views: 0, clicks: 0 };
+    var ctr = d.views > 0 ? ((d.clicks / d.views) * 100).toFixed(1) + '%' : '—';
+    prodHtml += '<tr><td class="page-name">' + name + '</td><td class="view-count">' + d.views.toLocaleString() + '</td><td class="click-count">' + d.clicks.toLocaleString() + '</td><td class="ctr">' + ctr + '</td></tr>';
+  });
+  document.getElementById('productTable').innerHTML = prodHtml;
+}
+
+// Auto-refresh every 5 seconds
+setInterval(loadData, 5000);
+</script>
+
+</body>
+</html>
