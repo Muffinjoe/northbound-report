@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1396827095367259');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1396827095367259&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Northbound Report — Independent Consumer Reviews & Health Insights</title>
+<meta name="description" content="Northbound Report delivers independent consumer reviews, health insights, and product investigations trusted by thousands of American readers.">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --color-bg: #ffffff; --color-text: #1a1a2e; --color-text-secondary: #555;
+  --color-accent: #1a56db; --color-accent-hover: #1340a8; --color-border: #e5e7eb;
+  --color-surface: #f8f9fb; --font-heading: 'Georgia', 'Times New Roman', serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --max-width: 1140px;
+}
+
+html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--font-body); color: var(--color-text); background: var(--color-bg); line-height: 1.7; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--color-accent); text-decoration: none; }
+a:hover { color: var(--color-accent-hover); }
+
+.top-bar { background: #0f172a; color: #94a3b8; font-size: 0.75rem; padding: 6px 0; text-align: center; letter-spacing: 0.03em; }
+.top-bar span { margin: 0 12px; }
+
+.site-header { border-bottom: 3px solid var(--color-text); background: var(--color-bg); position: sticky; top: 0; z-index: 100; }
+.header-inner { max-width: var(--max-width); margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; }
+.site-logo { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--color-text); letter-spacing: -0.02em; }
+.site-logo span { color: var(--color-accent); }
+.site-nav { display: flex; gap: 24px; align-items: center; }
+.site-nav a { color: var(--color-text); font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; transition: color 0.2s; }
+.site-nav a:hover { color: var(--color-accent); }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+.nav-toggle svg { width: 24px; height: 24px; }
+
+.category-strip { background: var(--color-surface); border-bottom: 1px solid var(--color-border); overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.category-strip-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; display: flex; gap: 0; }
+.category-strip a { display: block; padding: 10px 16px; font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-secondary); white-space: nowrap; border-bottom: 2px solid transparent; transition: all 0.2s; }
+.category-strip a:hover, .category-strip a.active { color: var(--color-accent); border-bottom-color: var(--color-accent); }
+
+/* HERO */
+.hero { max-width: var(--max-width); margin: 0 auto; padding: 48px 20px 32px; text-align: center; }
+.hero h1 { font-family: var(--font-heading); font-size: 2.6rem; font-weight: 700; line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.02em; }
+.hero p { font-size: 1.15rem; color: var(--color-text-secondary); max-width: 640px; margin: 0 auto; line-height: 1.6; }
+
+/* FEATURED */
+.section-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-accent); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--color-accent); display: inline-block; }
+
+.content-wrapper { max-width: var(--max-width); margin: 0 auto; padding: 0 20px 48px; }
+
+/* FEATURED GRID */
+.featured-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 48px; }
+.featured-card { border: 1px solid var(--color-border); border-radius: 8px; overflow: hidden; transition: box-shadow 0.2s; }
+.featured-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+.featured-card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+.featured-card-body { padding: 20px; }
+.featured-card .card-category { display: inline-block; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-accent); margin-bottom: 8px; }
+.featured-card h2 { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.featured-card h2 a { color: var(--color-text); }
+.featured-card h2 a:hover { color: var(--color-accent); }
+.featured-card p { font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.5; margin-bottom: 10px; }
+.featured-card .card-meta { font-size: 0.78rem; color: #94a3b8; }
+
+/* ARTICLE LIST */
+.article-list { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-bottom: 48px; }
+.article-item { border: 1px solid var(--color-border); border-radius: 8px; padding: 20px; transition: box-shadow 0.2s; }
+.article-item:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+.article-item .card-category { display: inline-block; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-accent); margin-bottom: 8px; }
+.article-item h3 { font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+.article-item h3 a { color: var(--color-text); }
+.article-item h3 a:hover { color: var(--color-accent); }
+.article-item p { font-size: 0.85rem; color: var(--color-text-secondary); line-height: 1.5; }
+.article-item .card-meta { font-size: 0.75rem; color: #94a3b8; margin-top: 10px; }
+
+/* NEWSLETTER */
+.newsletter { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 10px; padding: 40px; text-align: center; margin-bottom: 48px; }
+.newsletter h2 { font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: 8px; }
+.newsletter p { font-size: 0.95rem; color: var(--color-text-secondary); margin-bottom: 20px; }
+.newsletter-form { display: flex; gap: 10px; max-width: 440px; margin: 0 auto; }
+.newsletter-form input { flex: 1; padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 0.9rem; outline: none; }
+.newsletter-form button { background: var(--color-accent); color: #fff; border: none; padding: 12px 24px; border-radius: 6px; font-size: 0.9rem; font-weight: 600; cursor: pointer; white-space: nowrap; }
+.newsletter-form button:hover { background: var(--color-accent-hover); }
+.newsletter .small-text { font-size: 0.75rem; color: #94a3b8; margin-top: 10px; }
+
+/* FOOTER */
+.site-footer { background: #0f172a; color: #94a3b8; padding: 40px 20px; }
+.footer-inner { max-width: var(--max-width); margin: 0 auto; display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: 32px; }
+.footer-col h4 { color: #e2e8f0; font-size: 0.85rem; font-weight: 600; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+.footer-col a { display: block; color: #94a3b8; font-size: 0.85rem; margin-bottom: 8px; transition: color 0.2s; }
+.footer-col a:hover { color: #e2e8f0; }
+.footer-bottom { max-width: var(--max-width); margin: 0 auto; padding-top: 24px; margin-top: 24px; border-top: 1px solid #1e293b; font-size: 0.75rem; color: #64748b; line-height: 1.7; }
+.footer-bottom p { margin-bottom: 4px; }
+
+@media (max-width: 900px) {
+  .hero h1 { font-size: 2rem; }
+  .featured-grid { grid-template-columns: 1fr; }
+  .article-list { grid-template-columns: 1fr; }
+  .site-nav { display: none; }
+  .site-nav.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: #fff; padding: 16px 20px; border-bottom: 2px solid var(--color-text); gap: 12px; z-index: 99; }
+  .nav-toggle { display: block; }
+  .header-inner { position: relative; }
+  .newsletter { padding: 24px; }
+  .newsletter-form { flex-direction: column; }
+  .footer-inner { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <span>Monday, March 23, 2026</span><span>|</span><span>New York, NY</span>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">Northbound <span>Report</span></a>
+    <nav class="site-nav" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="#">Reviews</a>
+      <a href="#">Health</a>
+      <a href="#">Tech</a>
+      <a href="#">Trending</a>
+    </nav>
+    <button class="nav-toggle" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="category-strip">
+  <div class="category-strip-inner">
+    <a href="#" class="active">All</a>
+    <a href="#">Consumer Reports</a>
+    <a href="#">Health & Wellness</a>
+    <a href="#">Emergency Prep</a>
+    <a href="#">Neuroscience</a>
+    <a href="#">Product Reviews</a>
+    <a href="#">Lifestyle</a>
+  </div>
+</div>
+
+<!-- Hero -->
+<div class="hero">
+  <h1>Independent Consumer Reviews & Health Insights</h1>
+  <p>Northbound Report delivers honest, research-backed product reviews and consumer insights trusted by thousands of American readers.</p>
+</div>
+
+<div class="content-wrapper">
+
+  <!-- Featured Articles -->
+  <span class="section-label">Featured Reviews</span>
+
+  <div class="featured-grid">
+    <div class="featured-card">
+      <a href="davids-shield/index.html"><img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?w=600&h=340&fit=crop&crop=center" alt="Power grid vulnerability"></a>
+      <div class="featured-card-body">
+        <div class="card-category">Emergency Preparedness</div>
+        <h2><a href="davids-shield/index.html">How One Off-Grid Blueprint Is Quietly Helping Thousands of American Families Prepare for the Unthinkable</a></h2>
+        <p>With infrastructure experts warning of grid vulnerability, a growing number of families are turning to an unconventional survival guide.</p>
+        <div class="card-meta">Michael Carrington &middot; March 23, 2026 &middot; 9 min read</div>
+      </div>
+    </div>
+    <div class="featured-card">
+      <a href="genius-wave/index.html"><img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&h=340&fit=crop&crop=center" alt="Brain health audio"></a>
+      <div class="featured-card-body">
+        <div class="card-category">Neuroscience</div>
+        <h2><a href="genius-wave/index.html">The 12-Minute Audio Track That Neuroscientists Say Could Sharpen Your Mind at Any Age</a></h2>
+        <p>A digital brainwave program based on Theta wave research is helping Americans improve focus, memory, and mental clarity.</p>
+        <div class="card-meta">Michael Carrington &middot; March 23, 2026 &middot; 8 min read</div>
+      </div>
+    </div>
+    <div class="featured-card">
+      <a href="derila/index.html"><img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&h=340&fit=crop&crop=center" alt="Ergonomic pillow"></a>
+      <div class="featured-card-body">
+        <div class="card-category">Product Review</div>
+        <h2><a href="derila/index.html">This Ergonomic Pillow Is Ending Morning Neck Pain for Thousands — Here's What Makes It Different</a></h2>
+        <p>A revolutionary butterfly-shaped memory foam pillow is gaining attention for its ability to keep the spine perfectly aligned all night.</p>
+        <div class="card-meta">Michael Carrington &middot; March 23, 2026 &middot; 7 min read</div>
+      </div>
+    </div>
+    <div class="featured-card">
+      <a href="smart-water-box/index.html"><img src="https://images.unsplash.com/photo-1504297050568-910d24c426d3?w=600&h=340&fit=crop&crop=center" alt="Water crisis"></a>
+      <div class="featured-card-body">
+        <div class="card-category">Water Security</div>
+        <h2><a href="smart-water-box/index.html">This DIY Device Pulls Up to 40 Gallons of Clean Drinking Water Per Day From Thin Air</a></h2>
+        <p>A simple atmospheric water generator is helping families produce their own clean water supply — no pipes, no wells, no bills.</p>
+        <div class="card-meta">Michael Carrington &middot; March 23, 2026 &middot; 9 min read</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- More Articles -->
+  <span class="section-label">Latest Articles</span>
+
+  <div class="article-list">
+    <div class="article-item">
+      <div class="card-category">Brain Health</div>
+      <h3><a href="memory-wave/index.html">The 12-Minute Audio That Supports Your Brain's Natural Cleaning Process</a></h3>
+      <p>New Gamma brainwave research reveals a surprising connection between sound frequencies and the brain's waste-clearing system.</p>
+      <div class="card-meta">March 23, 2026</div>
+    </div>
+    <div class="article-item">
+      <div class="card-category">Health & Wellness</div>
+      <h3><a href="sleep-quality-guide/index.html">7 Science-Backed Ways to Improve Your Sleep Quality Tonight</a></h3>
+      <p>Simple, evidence-based changes you can make today for dramatically better sleep starting tonight.</p>
+      <div class="card-meta">March 23, 2026</div>
+    </div>
+    <div class="article-item">
+      <div class="card-category">Emergency Prep</div>
+      <h3><a href="emergency-preparedness-checklist/index.html">The Complete Emergency Preparedness Checklist Every American Household Needs</a></h3>
+      <p>A comprehensive guide to building a household emergency plan that actually works when you need it.</p>
+      <div class="card-meta">March 23, 2026</div>
+    </div>
+    <div class="article-item">
+      <div class="card-category">Neuroscience</div>
+      <h3><a href="brain-health-over-40/index.html">What Every American Over 40 Should Know About Brain Health</a></h3>
+      <p>The latest research on cognitive decline, prevention strategies, and what actually works to keep your mind sharp.</p>
+      <div class="card-meta">March 23, 2026</div>
+    </div>
+    <div class="article-item">
+      <div class="card-category">Consumer Reports</div>
+      <h3><a href="water-quality-report/index.html">What's Really in Your Tap Water? A 2026 Consumer Report</a></h3>
+      <p>From PFAS to microplastics — a look at what the EPA does and doesn't regulate in your drinking water.</p>
+      <div class="card-meta">March 23, 2026</div>
+    </div>
+    <div class="article-item">
+      <div class="card-category">Lifestyle</div>
+      <h3><a href="off-grid-living-beginners/index.html">Off-Grid Living for Beginners: What You Actually Need to Know</a></h3>
+      <p>A realistic guide to getting started with off-grid living — beyond the social media fantasy.</p>
+      <div class="card-meta">March 23, 2026</div>
+    </div>
+  </div>
+
+  <!-- Newsletter -->
+  <div class="newsletter">
+    <h2>Stay Informed</h2>
+    <p>Get our weekly consumer reports and health insights delivered to your inbox.</p>
+    <div class="newsletter-form">
+      <input type="email" placeholder="Enter your email address">
+      <button>Subscribe</button>
+    </div>
+    <div class="small-text">No spam. Unsubscribe anytime. We respect your privacy.</div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>Northbound Report</h4>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="#">Editorial Standards</a>
+      <a href="#">Careers</a>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <a href="#">Health & Wellness</a>
+      <a href="#">Consumer Reports</a>
+      <a href="#">Emergency Prep</a>
+      <a href="#">Lifestyle</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="#">Cookie Policy</a>
+      <a href="#">Accessibility</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Northbound Report. All rights reserved.</p>
+    <p><strong>Advertising Disclosure:</strong> Some articles on this site may contain affiliate links. If you click on a link and make a purchase, we may receive a commission at no additional cost to you. This does not influence our editorial content.</p>
+  </div>
+</footer>
+
+</body>
+</html>

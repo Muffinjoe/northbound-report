@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — Northbound Report</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --color-bg: #ffffff; --color-text: #1a1a2e; --color-text-secondary: #555; --color-accent: #1a56db; --color-accent-hover: #1340a8; --color-border: #e5e7eb; --color-surface: #f8f9fb; --font-heading: 'Georgia', 'Times New Roman', serif; --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; --max-width: 1140px; }
+html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--font-body); color: var(--color-text); background: var(--color-bg); line-height: 1.7; }
+a { color: var(--color-accent); text-decoration: none; }
+a:hover { color: var(--color-accent-hover); }
+.top-bar { background: #0f172a; color: #94a3b8; font-size: 0.75rem; padding: 6px 0; text-align: center; }
+.top-bar span { margin: 0 12px; }
+.site-header { border-bottom: 3px solid var(--color-text); background: var(--color-bg); position: sticky; top: 0; z-index: 100; }
+.header-inner { max-width: var(--max-width); margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; }
+.site-logo { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--color-text); }
+.site-logo span { color: var(--color-accent); }
+.site-nav { display: flex; gap: 24px; }
+.site-nav a { color: var(--color-text); font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; }
+.site-nav a:hover { color: var(--color-accent); }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+.nav-toggle svg { width: 24px; height: 24px; }
+
+.page-wrapper { max-width: 720px; margin: 0 auto; padding: 48px 20px 60px; }
+.page-wrapper h1 { font-family: var(--font-heading); font-size: 2rem; margin-bottom: 24px; }
+.page-wrapper h2 { font-family: var(--font-heading); font-size: 1.4rem; margin: 32px 0 12px; }
+.page-wrapper p { font-size: 1.05rem; line-height: 1.8; color: #2d2d44; margin-bottom: 16px; }
+.values-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 24px 0 32px; }
+.value-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 8px; padding: 20px; }
+.value-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+.value-card p { font-size: 0.9rem; margin-bottom: 0; }
+
+.site-footer { background: #0f172a; color: #94a3b8; padding: 40px 20px; }
+.footer-inner { max-width: var(--max-width); margin: 0 auto; display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: 32px; }
+.footer-col h4 { color: #e2e8f0; font-size: 0.85rem; font-weight: 600; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+.footer-col a { display: block; color: #94a3b8; font-size: 0.85rem; margin-bottom: 8px; }
+.footer-col a:hover { color: #e2e8f0; }
+.footer-bottom { max-width: var(--max-width); margin: 0 auto; padding-top: 24px; margin-top: 24px; border-top: 1px solid #1e293b; font-size: 0.75rem; color: #64748b; }
+
+@media (max-width: 900px) {
+  .site-nav { display: none; }
+  .site-nav.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: #fff; padding: 16px 20px; border-bottom: 2px solid var(--color-text); gap: 12px; z-index: 99; }
+  .nav-toggle { display: block; }
+  .header-inner { position: relative; }
+  .values-grid { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<div class="top-bar"><span>Monday, March 23, 2026</span><span>|</span><span>New York, NY</span></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">Northbound <span>Report</span></a>
+    <nav class="site-nav" id="mainNav">
+      <a href="index.html">Home</a><a href="#">Reviews</a><a href="#">Health</a><a href="#">Trending</a>
+    </nav>
+    <button class="nav-toggle" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="page-wrapper">
+  <h1>About Northbound Report</h1>
+
+  <p>Northbound Report is an independent consumer publication dedicated to delivering honest, research-backed product reviews and health insights to American readers.</p>
+
+  <p>Founded in 2024, we started with a simple mission: cut through the noise. In a world saturated with sponsored content, paid placements, and algorithm-driven recommendations, we believed there was a need for straightforward consumer journalism — the kind that puts readers first.</p>
+
+  <h2>What We Do</h2>
+
+  <p>Our editorial team researches, tests, and reviews products across health, wellness, emergency preparedness, technology, and lifestyle categories. Every article we publish is the result of genuine investigation — not a press release rewrite.</p>
+
+  <p>We focus on products and topics that matter to everyday Americans: things that affect your health, your safety, your home, and your quality of life. We don't review everything — we review what we believe deserves attention, for better or worse.</p>
+
+  <h2>Our Values</h2>
+
+  <div class="values-grid">
+    <div class="value-card">
+      <h3>Independence</h3>
+      <p>Our editorial decisions are never influenced by advertisers. We choose what to review based on reader interest and product merit.</p>
+    </div>
+    <div class="value-card">
+      <h3>Transparency</h3>
+      <p>When an article contains affiliate links, we disclose it clearly. You always know when we may receive compensation.</p>
+    </div>
+    <div class="value-card">
+      <h3>Accuracy</h3>
+      <p>Every claim in our articles is researched and verified. When we cite statistics, we link to primary sources wherever possible.</p>
+    </div>
+    <div class="value-card">
+      <h3>Readability</h3>
+      <p>We write for real people, not search engines. Clear language, honest assessments, and no unnecessary jargon.</p>
+    </div>
+  </div>
+
+  <h2>Advertising Disclosure</h2>
+
+  <p>Northbound Report is reader-supported. Some of our articles contain affiliate links, which means we may earn a commission if you click through and make a purchase. This never influences our editorial content or product ratings. We only feature products we believe provide genuine value to our readers.</p>
+
+  <h2>Get in Touch</h2>
+
+  <p>Have a question, story tip, or correction? We'd love to hear from you. Visit our <a href="contact.html">contact page</a> or email us at editorial@northboundreport.com.</p>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col"><h4>Northbound Report</h4><a href="about.html">About Us</a><a href="contact.html">Contact</a></div>
+    <div class="footer-col"><h4>Categories</h4><a href="#">Health</a><a href="#">Consumer Reports</a><a href="#">Lifestyle</a></div>
+    <div class="footer-col"><h4>Legal</h4><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div>
+  </div>
+  <div class="footer-bottom"><p>&copy; 2026 Northbound Report. All rights reserved.</p></div>
+</footer>
+
+</body>
+</html>
