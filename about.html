@@ -64,6 +64,11 @@ a:hover { color: var(--color-accent-hover); }
 .site-logo .logo-box { display: inline-flex; align-items: center; gap: 1px; background: #1e3a8a; border-radius: 0; padding: 2px 6px; margin-right: 8px; font-size: 0.85em; letter-spacing: 1px; }
 .site-logo .logo-n, .site-logo .logo-b, .site-logo .logo-r { color: #ffffff; font-weight: 800; }
 .site-logo .logo-divider { display: none; }
+
+/* related-cards-responsive */
+@media (max-width: 600px) {
+  [style*="grid-template-columns:repeat(3"] { grid-template-columns: 1fr !important; }
+}
 </style>
 <script type="application/ld+json">
 {
@@ -147,11 +152,29 @@ a:hover { color: var(--color-accent-hover); }
     <!-- Related Articles -->
     <div style="margin-top:40px;padding-top:32px;border-top:1px solid #e5e7eb;">
       <h2 style="font-family:Georgia,serif;font-size:1.3rem;margin-bottom:16px;">You Might Also Like</h2>
-      <ul style="list-style:none;margin:0;padding:0;">
-        <li><a href="derila-v4-snoring/index.html">How Snoring Is Tearing Apart Relationships</a></li>
-        <li><a href="memory-wave-v3-brain-science/index.html">Secrets of the Glymphatic System</a></li>
-        <li><a href="memory-wave-v4-retirement/index.html">Staying Sharp in Retirement</a></li>
-      </ul>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px;">
+      <div style="border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;transition:box-shadow 0.2s;">
+        <a href="derila-v4-snoring/index.html"><img src="https://images.unsplash.com/photo-1515894203077-9cd36032142f?w=400&h=225&fit=crop&crop=center" alt="How Snoring Is Tearing Apart Relationships" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;"></a>
+        <div style="padding:12px 14px;">
+          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#6366f1;margin-bottom:4px;">Relationships</div>
+          <div style="font-family:Georgia,serif;font-size:0.88rem;font-weight:700;line-height:1.3;"><a href="derila-v4-snoring/index.html" style="color:#1a1a2e;text-decoration:none;">How Snoring Is Tearing Apart Relationships</a></div>
+        </div>
+      </div>
+      <div style="border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;transition:box-shadow 0.2s;">
+        <a href="memory-wave-v3-brain-science/index.html"><img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=225&fit=crop&crop=center" alt="Secrets of the Glymphatic System" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;"></a>
+        <div style="padding:12px 14px;">
+          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#6366f1;margin-bottom:4px;">Neuroscience</div>
+          <div style="font-family:Georgia,serif;font-size:0.88rem;font-weight:700;line-height:1.3;"><a href="memory-wave-v3-brain-science/index.html" style="color:#1a1a2e;text-decoration:none;">Secrets of the Glymphatic System</a></div>
+        </div>
+      </div>
+      <div style="border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;transition:box-shadow 0.2s;">
+        <a href="memory-wave-v4-retirement/index.html"><img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=400&h=225&fit=crop&crop=center" alt="Staying Sharp in Retirement" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;"></a>
+        <div style="padding:12px 14px;">
+          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#6366f1;margin-bottom:4px;">Retirement</div>
+          <div style="font-family:Georgia,serif;font-size:0.88rem;font-weight:700;line-height:1.3;"><a href="memory-wave-v4-retirement/index.html" style="color:#1a1a2e;text-decoration:none;">Staying Sharp in Retirement</a></div>
+        </div>
+      </div>
+      </div>
     </div>
 
 <footer class="site-footer">

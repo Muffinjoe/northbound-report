@@ -184,6 +184,11 @@ a.cta-button, a.cta-button:visited, a.cta-button:hover { color: #ffffff !importa
   .cta-button { width: 100%; text-align: center; display: block; }
   .footer-inner { flex-direction: column; } .stat-row { flex-direction: column; }
 }
+
+/* related-cards-responsive */
+@media (max-width: 600px) {
+  [style*="grid-template-columns:repeat(3"] { grid-template-columns: 1fr !important; }
+}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article","headline":"The Secret Struggle: How Parents Masking OCD Affects Their Ability to Parent","description":"Why the Silence Around OCD in Parenting Needs to End, and How Mastering Your OCD Can Bring Relief to the Whole Family","url":"https://northboundreport.com/master-your-ocd-v2-parents/","datePublished":"2026-03-24","dateModified":"2026-03-24","author":{"@type":"Person","name":"Michael Carrington"},"publisher":{"@type":"Organization","name":"Northbound Report"},"image":{"@type":"ImageObject","url":"https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=1200&h=630&fit=crop","width":1200,"height":630}}
@@ -330,11 +335,29 @@ a.cta-button, a.cta-button:visited, a.cta-button:hover { color: #ffffff !importa
     <!-- Related Articles -->
     <div style="margin-top:40px;padding-top:32px;border-top:1px solid #e5e7eb;">
       <h2 style="font-family:Georgia,serif;font-size:1.3rem;margin-bottom:16px;">You Might Also Like</h2>
-      <ul style="list-style:none;margin:0;padding:0;">
-        <li><a href="../master-your-ocd/index.html">The Online OCD Program 10,000+ People Are Using</a></li>
-        <li><a href="../genius-wave-v4-stress-relief/index.html">A New Approach to America's Stress Epidemic</a></li>
-        <li><a href="../brain-health-over-40/index.html">What Every American Over 40 Should Know About Brain Health</a></li>
-      </ul>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px;">
+      <div style="border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;transition:box-shadow 0.2s;">
+        <a href="../master-your-ocd/index.html"><img src="https://images.unsplash.com/photo-1474631245212-32dc3c8310c6?w=400&h=225&fit=crop&crop=center" alt="The Online OCD Program 10,000+ People Are Using" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;"></a>
+        <div style="padding:12px 14px;">
+          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#6366f1;margin-bottom:4px;">Mental Health</div>
+          <div style="font-family:Georgia,serif;font-size:0.88rem;font-weight:700;line-height:1.3;"><a href="../master-your-ocd/index.html" style="color:#1a1a2e;text-decoration:none;">The Online OCD Program 10,000+ People Are Using</a></div>
+        </div>
+      </div>
+      <div style="border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;transition:box-shadow 0.2s;">
+        <a href="../genius-wave-v4-stress-relief/index.html"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&h=225&fit=crop&crop=center" alt="A New Approach to America's Stress Epidemic" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;"></a>
+        <div style="padding:12px 14px;">
+          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#6366f1;margin-bottom:4px;">Mental Wellness</div>
+          <div style="font-family:Georgia,serif;font-size:0.88rem;font-weight:700;line-height:1.3;"><a href="../genius-wave-v4-stress-relief/index.html" style="color:#1a1a2e;text-decoration:none;">A New Approach to America's Stress Epidemic</a></div>
+        </div>
+      </div>
+      <div style="border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;transition:box-shadow 0.2s;">
+        <a href="../brain-health-over-40/index.html"><img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=225&fit=crop&crop=center" alt="What Every American Over 40 Should Know About Brain Health" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;"></a>
+        <div style="padding:12px 14px;">
+          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#6366f1;margin-bottom:4px;">Neuroscience</div>
+          <div style="font-family:Georgia,serif;font-size:0.88rem;font-weight:700;line-height:1.3;"><a href="../brain-health-over-40/index.html" style="color:#1a1a2e;text-decoration:none;">What Every American Over 40 Should Know About Brain Health</a></div>
+        </div>
+      </div>
+      </div>
     </div>
   </div>
 </article>

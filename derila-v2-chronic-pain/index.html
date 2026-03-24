@@ -152,6 +152,11 @@ a.cta-button, a.cta-button:visited, a.cta-button:hover { color: #ffffff !importa
 .site-logo .logo-box { display: inline-flex; align-items: center; gap: 1px; background: #1e3a8a; border-radius: 0; padding: 2px 6px; margin-right: 8px; font-size: 0.85em; letter-spacing: 1px; }
 .site-logo .logo-n, .site-logo .logo-b, .site-logo .logo-r { color: #ffffff; font-weight: 800; }
 .site-logo .logo-divider { display: none; }
+
+/* related-cards-responsive */
+@media (max-width: 600px) {
+  [style*="grid-template-columns:repeat(3"] { grid-template-columns: 1fr !important; }
+}
 </style>
 <script type="application/ld+json">
 {
@@ -305,11 +310,29 @@ a.cta-button, a.cta-button:visited, a.cta-button:hover { color: #ffffff !importa
     <!-- Related Articles -->
     <div style="margin-top:40px;padding-top:32px;border-top:1px solid #e5e7eb;">
       <h2 style="font-family:Georgia,serif;font-size:1.3rem;margin-bottom:16px;">You Might Also Like</h2>
-      <ul style="list-style:none;margin:0;padding:0;">
-        <li><a href="../derila-v3-sleep-science/index.html">The Science of Sleep Quality and Spinal Alignment</a></li>
-        <li><a href="../derila-v4-snoring/index.html">How Snoring Is Tearing Apart Relationships</a></li>
-        <li><a href="../sleep-quality-guide/index.html">7 Science-Backed Ways to Improve Your Sleep</a></li>
-      </ul>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px;">
+      <div style="border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;transition:box-shadow 0.2s;">
+        <a href="../derila-v3-sleep-science/index.html"><img src="https://images.unsplash.com/photo-1540206395-68808572332f?w=400&h=225&fit=crop&crop=center" alt="The Science of Sleep Quality and Spinal Alignment" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;"></a>
+        <div style="padding:12px 14px;">
+          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#6366f1;margin-bottom:4px;">Sleep Science</div>
+          <div style="font-family:Georgia,serif;font-size:0.88rem;font-weight:700;line-height:1.3;"><a href="../derila-v3-sleep-science/index.html" style="color:#1a1a2e;text-decoration:none;">The Science of Sleep Quality and Spinal Alignment</a></div>
+        </div>
+      </div>
+      <div style="border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;transition:box-shadow 0.2s;">
+        <a href="../derila-v4-snoring/index.html"><img src="https://images.unsplash.com/photo-1515894203077-9cd36032142f?w=400&h=225&fit=crop&crop=center" alt="How Snoring Is Tearing Apart Relationships" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;"></a>
+        <div style="padding:12px 14px;">
+          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#6366f1;margin-bottom:4px;">Relationships</div>
+          <div style="font-family:Georgia,serif;font-size:0.88rem;font-weight:700;line-height:1.3;"><a href="../derila-v4-snoring/index.html" style="color:#1a1a2e;text-decoration:none;">How Snoring Is Tearing Apart Relationships</a></div>
+        </div>
+      </div>
+      <div style="border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;transition:box-shadow 0.2s;">
+        <a href="../sleep-quality-guide/index.html"><img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&h=225&fit=crop&crop=center" alt="7 Science-Backed Ways to Improve Your Sleep" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;"></a>
+        <div style="padding:12px 14px;">
+          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#6366f1;margin-bottom:4px;">Health</div>
+          <div style="font-family:Georgia,serif;font-size:0.88rem;font-weight:700;line-height:1.3;"><a href="../sleep-quality-guide/index.html" style="color:#1a1a2e;text-decoration:none;">7 Science-Backed Ways to Improve Your Sleep</a></div>
+        </div>
+      </div>
+      </div>
     </div>
 </div>
 </article>

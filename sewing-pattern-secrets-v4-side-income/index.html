@@ -155,6 +155,11 @@ a.cta-button, a.cta-button:visited, a.cta-button:hover { color: #ffffff !importa
   .cta-button { width: 100%; text-align: center; display: block; }
   .footer-inner { flex-direction: column; } .stat-row { flex-direction: column; }
 }
+
+/* related-cards-responsive */
+@media (max-width: 600px) {
+  [style*="grid-template-columns:repeat(3"] { grid-template-columns: 1fr !important; }
+}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article","headline":"Threads of Gold: Unraveling the Hidden Potential of Sewing as a Lucrative Side Hustle","description":"How the Craft Market Boom on Etsy is Empowering Sewing Enthusiasts to Turn Their Passion into Profitable Pursuits","url":"https://northboundreport.com/sewing-pattern-secrets-v4-side-income/","datePublished":"2026-03-24","author":{"@type":"Person","name":"Michael Carrington"},"publisher":{"@type":"Organization","name":"Northbound Report"}}
@@ -289,13 +294,32 @@ Turning your sewing hobby into a profitable side hustle requires dedication, har
       <span class="urgency-nudge">$67 one-time — 30-day money-back guarantee</span>
     </div>
 
+    <!-- Related Articles -->
     <div style="margin-top:40px;padding-top:32px;border-top:1px solid #e5e7eb;">
       <h2 style="font-family:Georgia,serif;font-size:1.3rem;margin-bottom:16px;">You Might Also Like</h2>
-      <ul style="list-style:none;margin:0;padding:0;">
-        <li><a href="../sewing-pattern-secrets/index.html">155+ Sewing Patterns for $67 — Best Deal in Sewing?</a></li>
-        <li><a href="../off-grid-living-beginners/index.html">Off-Grid Living for Beginners</a></li>
-        <li><a href="../derila/index.html">The Ergonomic Pillow Ending Morning Pain</a></li>
-      </ul>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px;">
+      <div style="border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;transition:box-shadow 0.2s;">
+        <a href="../sewing-pattern-secrets/index.html"><img src="https://images.unsplash.com/photo-1605289982774-9a6fef564df8?w=400&h=225&fit=crop&crop=center" alt="155+ Sewing Patterns for $67 — Best Deal in Sewing?" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;"></a>
+        <div style="padding:12px 14px;">
+          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#6366f1;margin-bottom:4px;">Crafts</div>
+          <div style="font-family:Georgia,serif;font-size:0.88rem;font-weight:700;line-height:1.3;"><a href="../sewing-pattern-secrets/index.html" style="color:#1a1a2e;text-decoration:none;">155+ Sewing Patterns for $67 — Best Deal in Sewing?</a></div>
+        </div>
+      </div>
+      <div style="border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;transition:box-shadow 0.2s;">
+        <a href="../off-grid-living-beginners/index.html"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=400&h=225&fit=crop&crop=center" alt="Off-Grid Living for Beginners" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;"></a>
+        <div style="padding:12px 14px;">
+          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#6366f1;margin-bottom:4px;">Lifestyle</div>
+          <div style="font-family:Georgia,serif;font-size:0.88rem;font-weight:700;line-height:1.3;"><a href="../off-grid-living-beginners/index.html" style="color:#1a1a2e;text-decoration:none;">Off-Grid Living for Beginners</a></div>
+        </div>
+      </div>
+      <div style="border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;transition:box-shadow 0.2s;">
+        <a href="../derila/index.html"><img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&h=225&fit=crop&crop=center" alt="The Ergonomic Pillow Ending Morning Pain" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;"></a>
+        <div style="padding:12px 14px;">
+          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#6366f1;margin-bottom:4px;">Sleep</div>
+          <div style="font-family:Georgia,serif;font-size:0.88rem;font-weight:700;line-height:1.3;"><a href="../derila/index.html" style="color:#1a1a2e;text-decoration:none;">The Ergonomic Pillow Ending Morning Pain</a></div>
+        </div>
+      </div>
+      </div>
     </div>
   </div>
 </article>

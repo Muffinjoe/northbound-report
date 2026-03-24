@@ -43,6 +43,11 @@ a { color: var(--color-accent); text-decoration: none; } a:hover { color: var(--
 .site-logo .logo-box { display: inline-flex; align-items: center; gap: 1px; background: #1e3a8a; border-radius: 0; padding: 2px 6px; margin-right: 8px; font-size: 0.85em; letter-spacing: 1px; }
 .site-logo .logo-n, .site-logo .logo-b, .site-logo .logo-r { color: #ffffff; font-weight: 800; }
 .site-logo .logo-divider { display: none; }
+
+/* related-cards-responsive */
+@media (max-width: 600px) {
+  [style*="grid-template-columns:repeat(3"] { grid-template-columns: 1fr !important; }
+}
 </style>
 <script type="application/ld+json">
 {
@@ -112,11 +117,29 @@ a { color: var(--color-accent); text-decoration: none; } a:hover { color: var(--
     <!-- Related Articles -->
     <div style="margin-top:40px;padding-top:32px;border-top:1px solid #e5e7eb;">
       <h2 style="font-family:Georgia,serif;font-size:1.3rem;margin-bottom:16px;">You Might Also Like</h2>
-      <ul style="list-style:none;margin:0;padding:0;">
-        <li><a href="genius-wave-v3-creativity/index.html">How to Harness the Power of Creative Flow</a></li>
-        <li><a href="davids-shield/index.html">How One Off-Grid Blueprint Is Helping Families Prepare</a></li>
-        <li><a href="genius-wave-v4-stress-relief/index.html">A New Approach to America's Stress Epidemic</a></li>
-      </ul>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px;">
+      <div style="border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;transition:box-shadow 0.2s;">
+        <a href="genius-wave-v3-creativity/index.html"><img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=225&fit=crop&crop=center" alt="How to Harness the Power of Creative Flow" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;"></a>
+        <div style="padding:12px 14px;">
+          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#6366f1;margin-bottom:4px;">Creativity</div>
+          <div style="font-family:Georgia,serif;font-size:0.88rem;font-weight:700;line-height:1.3;"><a href="genius-wave-v3-creativity/index.html" style="color:#1a1a2e;text-decoration:none;">How to Harness the Power of Creative Flow</a></div>
+        </div>
+      </div>
+      <div style="border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;transition:box-shadow 0.2s;">
+        <a href="davids-shield/index.html"><img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?w=400&h=225&fit=crop&crop=center" alt="How One Off-Grid Blueprint Is Helping Families Prepare" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;"></a>
+        <div style="padding:12px 14px;">
+          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#6366f1;margin-bottom:4px;">Emergency Prep</div>
+          <div style="font-family:Georgia,serif;font-size:0.88rem;font-weight:700;line-height:1.3;"><a href="davids-shield/index.html" style="color:#1a1a2e;text-decoration:none;">How One Off-Grid Blueprint Is Helping Families Prepare</a></div>
+        </div>
+      </div>
+      <div style="border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;transition:box-shadow 0.2s;">
+        <a href="genius-wave-v4-stress-relief/index.html"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&h=225&fit=crop&crop=center" alt="A New Approach to America's Stress Epidemic" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;"></a>
+        <div style="padding:12px 14px;">
+          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#6366f1;margin-bottom:4px;">Mental Wellness</div>
+          <div style="font-family:Georgia,serif;font-size:0.88rem;font-weight:700;line-height:1.3;"><a href="genius-wave-v4-stress-relief/index.html" style="color:#1a1a2e;text-decoration:none;">A New Approach to America's Stress Epidemic</a></div>
+        </div>
+      </div>
+      </div>
     </div>
 
 <footer class="site-footer"><div class="footer-inner"><div class="footer-col"><h4>Northbound Report</h4><a href="about.html">About Us</a><a href="contact.html">Contact</a></div><div class="footer-col"><h4>Legal</h4><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div></div><div class="footer-bottom"><p>&copy; 2026 Northbound Report. All rights reserved.</p></div></footer>
