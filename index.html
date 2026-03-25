@@ -534,5 +534,8 @@ a:hover { color: var(--color-accent-hover); }
   });
 })();
 </script>
+<script>
+document.addEventListener('click',function(e){var l=e.target.closest('a[href*="hop.clickbank.net"]');if(l){fbq('track','Purchase',{value:1.00,currency:'GBP'});}});
+</script>
 </body>
 </html>
