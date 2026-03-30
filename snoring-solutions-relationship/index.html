@@ -27,7 +27,7 @@ fbq('track', 'PageView');
 <meta property="og:site_name" content="Northbound Report">
 <meta property="og:image" content="https://images.unsplash.com/photo-1515894203077-9cd36032142f?w=1200&h=675&fit=crop&crop=center">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<em>, </em>::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root { --color-bg: #ffffff; --color-text: #1a1a2e; --color-text-secondary: #555; --color-accent: #1a56db; --color-accent-hover: #1340a8; --color-border: #e5e7eb; --color-surface: #f8f9fb; --font-heading: 'Georgia', 'Times New Roman', serif; --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; --max-width: 1140px; }
 html { font-size: 16px; -webkit-font-smoothing: antialiased; }
 body { font-family: var(--font-body); color: var(--color-text); background: var(--color-bg); line-height: 1.7; }
@@ -244,6 +244,19 @@ a { color: var(--color-accent); text-decoration: none; } a:hover { color: var(--
 <p>Let's face it – sometimes you just need to block out the noise. Mack's earplugs are the simplest, cheapest solution on this list. They're not a snoring solution, but they'll keep you sleeping soundly until you can find a more long-term fix. And at this price, they're practically free.</p>
 
 <p>No single solution fits everyone, but most people find their answer somewhere on this list. I'm not saying our relationship is perfect – but we're sleeping in the same room again, and that's all that matters. Try a few of these products, and see what works for you.</p>
+
+    
+    <!-- Share Card -->
+    <div style="margin:36px 0;padding:28px;background:linear-gradient(135deg,#f0f9ff 0%,#f8f9fb 100%);border:2px solid #bfdbfe;border-radius:10px;text-align:center;">
+      <h3 style="font-family:Georgia,serif;font-size:1.15rem;margin-bottom:6px;color:#1a1a2e;">Know someone who needs better sleep?</h3>
+      <p style="font-size:0.92rem;color:#555;margin-bottom:16px;">Share this article with a partner, parent, or friend who could use these tips.</p>
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+        <a onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location.href),'fb','width=600,height=400');return false;" href="#" style="display:inline-flex;align-items:center;gap:6px;background:#1877f2;color:#fff;padding:10px 20px;border-radius:6px;font-size:0.85rem;font-weight:600;text-decoration:none;cursor:pointer;">Share on Facebook</a>
+        <a onclick="window.open('https://api.whatsapp.com/send?text='+encodeURIComponent(document.title+' '+window.location.href),'wa','width=600,height=400');return false;" href="#" style="display:inline-flex;align-items:center;gap:6px;background:#25d366;color:#fff;padding:10px 20px;border-radius:6px;font-size:0.85rem;font-weight:600;text-decoration:none;cursor:pointer;">WhatsApp</a>
+        <a onclick="navigator.clipboard.writeText(window.location.href);this.textContent='Link Copied!';setTimeout(()=>{this.textContent='Copy Link'},2000);return false;" href="#" style="display:inline-flex;align-items:center;gap:6px;background:#475569;color:#fff;padding:10px 20px;border-radius:6px;font-size:0.85rem;font-weight:600;text-decoration:none;cursor:pointer;">Copy Link</a>
+        <a href="mailto:?subject=You%20might%20find%20this%20helpful&body=Check%20out%20this%20article%20about%20snoring%20solutions%3A%20" onclick="this.href+= encodeURIComponent(window.location.href)" style="display:inline-flex;align-items:center;gap:6px;background:#64748b;color:#fff;padding:10px 20px;border-radius:6px;font-size:0.85rem;font-weight:600;text-decoration:none;cursor:pointer;">Email</a>
+      </div>
+    </div>
 
     <p style="font-size:0.82rem;color:#94a3b8;margin-top:32px;padding-top:20px;border-top:1px solid #e5e7eb;"><strong>Affiliate Disclosure:</strong> This article contains affiliate links. If you purchase through these links, we may earn a small commission at no extra cost to you. We only recommend products we believe provide genuine value.</p>
   </div>
